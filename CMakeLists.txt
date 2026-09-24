@@ -153,8 +153,8 @@ if(COPY_BUILD)
 		foreach(TARGET_DIR IN LISTS SKYRIM_PLUGIN_TARGETS)
 			add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
 				COMMAND ${CMAKE_COMMAND} -E make_directory "${TARGET_DIR}"
-				COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:${PROJECT_NAME}>" "${TARGET_DIR}/"
-				COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_PDB_FILE:${PROJECT_NAME}>" "${TARGET_DIR}/"
+				COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_FILE:${PROJECT_NAME}>" "${TARGET_DIR}/SKSE/Plugins/"
+				COMMAND ${CMAKE_COMMAND} -E copy_if_different "$<TARGET_PDB_FILE:${PROJECT_NAME}>" "${TARGET_DIR}/SKSE/Plugins/"
 			)
 		endforeach()
 	endif()

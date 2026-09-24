@@ -32,6 +32,8 @@ SKSEPluginLoad( const SKSE::LoadInterface* a_skse )
 		.logName = Version::PROJECT.data(),
 		.trampoline = true,
 		.trampolineSize = 450 } );
+		
+	Runtime::version = a_skse->RuntimeVersion();
 
 	if( auto* messaging = SKSE::GetMessagingInterface() )
 	{
